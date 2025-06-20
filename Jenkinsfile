@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Setup') {
             steps {
@@ -11,6 +10,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'NO_COLOR=1 npm test'
+            }
+        }
+        stage('Subir servidor') {
+            steps {
+                sh 'nohup npm start &'
             }
         }
     }
