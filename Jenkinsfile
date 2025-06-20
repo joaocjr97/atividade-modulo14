@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Checkout') {
             steps {
@@ -20,7 +19,7 @@ pipeline {
         }
         stage('Run Cypress tests') {
             steps {
-                sh 'npx cypress run'
+                sh 'NO_COLOR=1 npx cypress run'
             }
         }
     }
